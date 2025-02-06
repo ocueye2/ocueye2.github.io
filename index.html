@@ -1,119 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Site Availability Check</title>
+    <script>
+        async function checkSiteAndRedirect() {
+            const targetUrl = 'https://main.carsonmayn.com'; // Replace with the URL you want to check
+            const siteA = 'https://main.carsonmayn.com'; // Replace with Site A URL
+            const siteB = 'https://carsonmayn.com/backup'; // Replace with Site B URL
 
-        <html>
-    <head>
-        <title>index</title>
-        <style>
-        .glass {
-    border-radius: 20px;
-    padding: 20px;
-    margin: 20px;
-    backdrop-filter: blur(10px);
-    background-color: rgba(159, 159, 159, 0.195);
-    color: white;
-    text-align: center;
-}
-        body {
-    background: hsla(183, 100%, 68%, 1);
+            try {
+                const response = await fetch(targetUrl, { method: 'HEAD' });
+                if (response.ok) {
+                    window.location.href = siteA;
+                } else {
+                    window.location.href = siteB;
+                }
+            } catch (error) {
+                window.location.href = siteB;
+            }
+        }
 
-    background: linear-gradient(90deg, hsla(183, 100%, 68%, 1) 0%, hsla(202, 100%, 68%, 1) 53%, hsla(204, 83%, 73%, 1) 100%);
-    
-    background: -moz-linear-gradient(90deg, hsla(183, 100%, 68%, 1) 0%, hsla(202, 100%, 68%, 1) 53%, hsla(204, 83%, 73%, 1) 100%);
-    
-    background: -webkit-linear-gradient(90deg, hsla(183, 100%, 68%, 1) 0%, hsla(202, 100%, 68%, 1) 53%, hsla(204, 83%, 73%, 1) 100%);
-    
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#5CF7FF", endColorstr="#5AC2FF", GradientType=1 );
-
-background-repeat: no-repeat;
-background-size: cover;
-
-
-}
-.title {
-    text-align: center;
-    color: white;
-}
-body {
-    font-family: 'Montserrat', sans-serif;
-}
-h1 {
-    font-weight: 900; /* Bold */
-}
-p {
-    font-weight: 400; /* Regular */
-}
-        .navbar {
-    overflow: hidden;
-    background-color: #33333396;
-    backdrop-filter: blur(20px);
-    position: fixed; 
-    left: 50%; 
-    padding: 20px;
-    border-radius: 20px;
-    z-index: 1000;
-    transform: translate(-50%, -30%) scale(0.9); 
-    transition: all 0.3s;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    
-}
-
-.navbar:hover {
-    transform: translate(-50%, -10%) scale(1.5);
-    transition: all 0.3s;
-}
-
-.navbar a {
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: all 0.3s;
-    transform: scale(1);
-    border-radius: 20px;
-}
-
-.navbar a:hover {
-    transform: scale(1.5);
-    transition: all 0.3s;
-    background: #ddd;
-    color: black;
-    margin-left: 30px;
-    margin-right: 30px;
-}
-
-
-.main {
-    margin-top: 30px; 
-}
-
-        </style>
-    </head>
-    <body>
-    <div class="navbar">
-    <a href="#home">Home</a>
-    <a href="#news">My Servers</a>
-    <a href="#news">My Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-
-
-<html>
-    <head>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="glass">
-
-        </div>
-    </body>
+        // Call the function when the page loads
+        window.onload = checkSiteAndRedirect;
+    </script>
+</head>
+<body>
+    <p>Checking site availability...</p>
+</body>
 </html>
-    
-    </body>
-        
+
