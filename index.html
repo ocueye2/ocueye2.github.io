@@ -1,2 +1,522 @@
-<h1>wai repo</h1>
-<a href="https://github.com/ocueye2/wai.git"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Government Announces Moving Sidewalks | The Daily Deception</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap');
+
+:root {
+    --bg: #f4f1eb;
+    --paper: #fffefa;
+    --text: #202020;
+    --muted: #777;
+    --red: #c62828;
+    --border: #dedbd4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 0 25px;
+}
+
+/* Disclaimer */
+
+.disclaimer {
+    background: #252525;
+    color: white;
+    text-align: center;
+    padding: 9px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* Header */
+
+header {
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.logo {
+    text-align: center;
+    padding: 20px 0 25px;
+}
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 6vw, 65px);
+    letter-spacing: -3px;
+}
+
+.logo p {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    border-top: 1px solid var(--border);
+    padding: 14px 0;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: var(--red);
+}
+
+/* Article */
+
+main {
+    padding-top: 35px;
+}
+
+.breadcrumb {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.breadcrumb a:hover {
+    color: var(--red);
+}
+
+.article-header {
+    max-width: 900px;
+    margin: auto;
+}
+
+.category {
+    color: var(--red);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+h2.headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 62px);
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 800px;
+    margin-bottom: 25px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 25px;
+}
+
+.avatar {
+    width: 43px;
+    height: 43px;
+    background: #252525;
+    color: white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+}
+
+.author-info {
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.author-info span {
+    color: var(--muted);
+}
+
+/* Hero image */
+
+.hero {
+    width: 100%;
+    height: clamp(250px, 50vw, 550px);
+    object-fit: cover;
+    display: block;
+}
+
+.caption {
+    font-size: 11px;
+    color: var(--muted);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Article layout */
+
+.article-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 720px) 280px;
+    justify-content: space-between;
+    gap: 60px;
+    margin: 35px auto 70px;
+    max-width: 1050px;
+}
+
+.article-body {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    line-height: 1.85;
+}
+
+.article-body p {
+    margin-bottom: 25px;
+}
+
+.article-body h3 {
+    font-size: 28px;
+    margin: 35px 0 15px;
+}
+
+.article-body .lead {
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 1.65;
+}
+
+.article-body blockquote {
+    border-left: 4px solid var(--red);
+    padding: 10px 25px;
+    margin: 35px 0;
+    font-size: 25px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.article-body blockquote span {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 15px;
+    font-style: normal;
+}
+
+/* Sidebar */
+
+.sidebar {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.sidebar-box {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.sidebar h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 13px;
+    margin-bottom: 15px;
+}
+
+.sidebar-story {
+    margin-bottom: 20px;
+}
+
+.sidebar-story:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-story span {
+    color: var(--red);
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.sidebar-story h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    line-height: 1.3;
+    margin-top: 5px;
+}
+
+/* Share */
+
+.share {
+    display: flex;
+    gap: 10px;
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-family: 'DM Sans', sans-serif;
+}
+
+.share button {
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    background: var(--paper);
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.share button:hover {
+    background: var(--red);
+    color: white;
+}
+
+/* Footer */
+
+footer {
+    background: var(--paper);
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 35px;
+    font-size: 11px;
+    color: var(--muted);
+}
+
+footer h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+@media(max-width: 800px) {
+    .article-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media(max-width: 550px) {
+    .sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar span:last-child {
+        display: none;
+    }
+
+    .article-body {
+        font-size: 17px;
+    }
+
+    .article-body .lead {
+        font-size: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="disclaimer">
+    ⚠ SATIRICAL PUBLICATION — ALL STORIES ARE FICTIONAL
+</div>
+
+<header>
+    <div class="container">
+
+        <div class="topbar">
+            <span id="date"></span>
+            <span>INDEPENDENT NEWS & QUESTIONABLE JOURNALISM</span>
+        </div>
+
+        <div class="logo">
+            <h1>The Daily Deception</h1>
+            <p>All the news that isn't necessarily true</p>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Politics</a>
+            <a href="#">World</a>
+            <a href="#">Technology</a>
+            <a href="#">Science</a>
+            <a href="#">Entertainment</a>
+        </nav>
+
+    </div>
+</header>
+
+<main class="container">
+
+    <div class="breadcrumb">
+        <a href="index.html">Home</a> / Politics / Article
+    </div>
+
+    <section class="article-header">
+
+        <div class="category">National / Politics</div>
+
+        <h2 class="headline">
+           If you hate waffle houses or don't like it then you're racist and hate poor people.
+        </h2>
+
+        <p class="subtitle">
+            Its objectively true and your opinion is wrong
+        </p>
+
+        <div class="author">
+            <div class="avatar">J</div>
+            <div class="author-info">
+                <strong>Jonathan Fiction</strong><br>
+                <span>November 19, 2026 · 12:45 PM · 6 min read</span>
+            </div>
+        </div>
+
+    </section>
+
+    <img class="hero"
+         src="https://images.unsplash.com/photo-1495020689067-958852a7765e?w=1600"
+         alt="Newspapers">
+
+    <div class="caption">
+        Government officials present the proposed transportation plan. Photo: Fictional News Agency
+    </div>
+
+    <div class="article-layout">
+
+        <article class="article-body">
+
+           <p>i
+It carries a negative connotation and often describes exaggerated or showy behavior
+
+We’re trying to a convince a means of trying to appear more important, intelligent, cultured, or valuable than you really are
+
+.We are in times where poverty and economic crisis is at hand. That's why it's culturally correct to support and love waffle houses that support those communities in times where we need joy and happiness. That's where we need a waffle house. Waffle house is seen as a bad place by many and constantly overlooked, but when you need a place to go and nothing else is there for you, waffle house is. 
+
+Cash’s photos show us that waffle houses aren't put in places that are the most populated, that have the best views, or will get you the best customers. It's where reality kicks in and shows that there's always good in the midst of dark times. 
+
+Overall, if you hate waffle house or don't like it then you're racist and hate poor people.
+</p>
+
+        </article>
+
+        <aside class="sidebar">
+
+            <div class="sidebar-box">
+                <h3>Related Stories</h3>
+
+                <div class="sidebar-story">
+                    <span>Technology</span>
+                    <h4>Scientists Discover Computers Work Better When Nobody Is Watching</h4>
+                </div>
+
+                <div class="sidebar-story">
+                    <span>World</span>
+                    <h4>Entire Country Agrees to Take a Five-Minute Nap</h4>
+                </div>
+
+                <div class="sidebar-story">
+                    <span>Science</span>
+                    <h4>Study Finds 99% of People Have No Idea What They're Doing</h4>
+                </div>
+            </div>
+
+            <div class="sidebar-box">
+                <h3>About This Publication</h3>
+                <p style="font-size:13px;line-height:1.8;color:#777;">
+                    The Daily Deception is a fictional satirical
+                    publication. Our stories are created for
+                    entertainment and are not real news.
+                </p>
+            </div>
+
+        </aside>
+
+    </div>
+
+</main>
+
+<footer>
+    <h2>The Daily Deception</h2>
+    <p>© 2026 The Daily Deception. All stories are fictional.</p>
+    <p style="margin-top:10px;">Not responsible for any beliefs formed while reading this website.</p>
+</footer>
+
+<script>
+document.getElementById("date").textContent =
+    new Date().toLocaleDateString("en-US", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    });
+
+function shareArticle() {
+    if (navigator.share) {
+        navigator.share({
+            title: document.title,
+            url: window.location.href
+        });
+    } else {
+        navigator.clipboard.writeText(window.location.href);
+        alert("Article link copied!");
+    }
+}
+</script>
+
+</body>
+</html>
